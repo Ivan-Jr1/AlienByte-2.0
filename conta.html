@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="src/slide.css" />
+  <link rel="shortcut icon" href="alienn.ico" type="image/x-icon">
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://kit.fontawesome.com/324b71f187.js" crossorigin="anonymous"> </script>
+  <script src="src/slide.js" defer></script>
+  <script src="login.js" defer></script>
+  <script src="animation.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlienByte</title>
+</head>
+
+<body>
+  <nav>
+    <div class="navbar">
+      <i class="bx bx-menu"></i>
+
+      <div class="logo">
+        <a href="http://127.0.0.1:5500/Projeto%2023-09/index.html">
+          <img
+            src="https://lh3.googleusercontent.com/pw/AIL4fc-pd74C9bNlOXvwgSWDASf9LBhWJW5Mjumyj6P8-MbzwPpEJB72Bbve59nkedSamgUWFAWhh8ZU3jm-VxtZWrU-M8dzegONuksCMs6YFYqXkEuNq9xMlYWJEgGtMaErAxU77joE_iaQr3GCj-_VOFcQ=w500-h500-s-no?authuser=0" /></a>
+      </div>
+
+      <!-- MENU -->
+      <div class="nav-links">
+        <div class="sidebar-logo">
+          <i class="bx bx-x"></i>
+        </div>
+        <ul class="links">
+          <li><a href="index.html">HOME</a></li>
+          <li>
+            <a href="#">DEPARTAMENTOS</a>
+            <i class="bx bxs-chevron-down htmlcss-arrow arrow"></i>
+            <ul class="htmlCss-sub-menu sub-menu">
+              <li><a href="teclado.html">Teclado</a></li>
+              <li><a href="mouse.html">Mouse</a></li>
+              <li><a href="headset.html">Headset</a></li>
+              <li class="more">
+                <span><a href="#">Mais</a>
+                  <i class="bx bxs-chevron-right arrow more-arrow"></i>
+                </span>
+                <ul class="more-sub-menu sub-menu">
+                  <li><a href="gabinetes.html">Gabinetes</a></li>
+                  <li><a href="games.html">Games</a></li>
+                  <li><a href="cadeiras.html">Cadeiras</a></li>
+                  <li><a href="monitor.html">Monitores</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="promocao.html" target="_self">PROMOÇÕES</a>
+            <ul class="js-sub-menu sub-menu">
+            </ul>
+          </li>
+          <li>
+            <a href="#">OLÁ... Entre!</a>
+            <i class="bx bxs-chevron-down htmlcss-arrow arrow"></i>
+             <ul class="htmlCss-sub-menu sub-menu">
+              <li><a href="conta.html" target="_self"> Conta </a></li>
+              <li><a href="atendimento.html">Atendimento</a></li>    
+        </ul>
+      </div>
+
+      <!-- BOTOES DE LOGIN/CADASTRO -->
+      <!-- <div class="btn">
+        <button href="#" class="login">Login</button>
+        <button href="#" class="cadastro">Cadastro</button>
+      </div> -->
+
+      <!-- CARRINHO DE COMPRAS -->
+      <div class="header-icon">
+        <i class="bx bx-cart"></i>
+        <span class="item__total"></span>
+
+        <!-- BARRA DE PESQUISA -->
+        <div class="search-box">
+          <i class="bx bx-search"></i>
+          <div class="input-box">
+            <input type="text" placeholder="Pesquise o seu produto" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SLIDER ANIMADO -->
+  <!-- <section class="slider">
+    <div class="slider-content">
+      <input type="radio" name="btn-radio" id="radio1" />
+      <input type="radio" name="btn-radio" id="radio2" />
+      <input type="radio" name="btn-radio" id="radio3" />
+
+      <div class="slide-box primeiro">
+        <img class="img-desktop" src="src/images/1.jpg" alt="slide 1" />
+        <img class="img-mobile" src="src/images/slide 1 mob.jpg" alt="slide 1" />
+      </div>
+
+      <div class="slide-box">
+        <img class="img-desktop" src="src/images/2.jpg" alt="slide 3" />
+        <img class="img-mobile" src="src/images/2 mobile.jpg" alt="slide 1" />
+      </div>
+
+      <div class="slide-box">
+        <img class="img-desktop" src="src/images/cadeiras 3.jpg" alt="slide 3" />
+        <img class="img-mobile" src="src/images/3 cadeira mobile.jpg" alt="slide 3" />
+      </div>
+
+      <div class="nav-auto">
+        <div class="auto-btn1"></div>
+        <div class="auto-btn2"></div>
+        <div class="auto-btn3"></div>
+      </div>
+
+      <div class="nav-manual">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+      </div>
+    </div>
+  </section>
+  <br> -->
+  <br>
+    <!-- Login -->
+    <br>
+ <main>
+    <div class="login-container" id="login-container">
+        <div class="form-container">
+            <form class="form form-login">
+                <h2 class="form-title">LOGIN<p><small>sou cliente</small></p></h2>
+                <div class="form-social">
+                    <a href="https://www.facebook.com/?locale=pt_BR" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://accounts.google.com/AccountChooser/signinchooser?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&flowName=GlifWebSignIn&flowEntry=AccountChooser&theme=glif" class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+                </div>
+                <p class="form-text">ou utilize sua conta</p>
+                <div class="form-input-container">
+                    <input type="email" class="form-input" placeholder="Email">
+                    <input type="password" class="form-input" placeholder="Senha">
+                </div>
+                <a href="esquece.html" class="form-link">Esqueceu a senha?</a>
+                <button type="button" class="form-button">ENTRAR</button>
+                <p class="mobile-text">
+                    Não tem conta?
+                    <a href="#" id="open-register-mobile">Registre-se</a>
+                </p>
+            </form>
+            <form class="form form-register">
+                <h2 class="form-title">Criar Conta</h2>
+                <div class="form-social">
+                  <a href="https://www.facebook.com/?locale=pt_BR" class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://accounts.google.com/AccountChooser/signinchooser?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&flowName=GlifWebSignIn&flowEntry=AccountChooser&theme=glif" class="social-icon">
+                    <i class="fab fa-google"></i>
+                </a>
+                </div>
+                <p class="form-text">ou cadastre seu email</p>
+                <div class="form-input-container">
+                    <input type="text" class="form-input" placeholder="Nome">
+                    <input type="email" class="form-input" placeholder="Email">
+                    <input type="password" class="form-input" placeholder="Senha">
+                </div>
+                <button type="button" class="form-button">Cadastrar</button>
+                <p class="mobile-text">
+                    Já tem conta?
+                    <a href="#" id="open-login-mobile">Login</a>
+                </p>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <h2 class="form-title form-title-light">Já tem conta?</h2>
+                <p class="form-text">Olá! Se você já comprou na AlienByte antes, por favor, informe seu e-mail e senha.</p>
+                <button class="form-button form-button-light" id="open-login">Entrar</button>
+            </div>
+            <div class="overlay">
+                <h2 class="form-title form-title-light">Olá Cliente!</h2>
+                <p class="form-text">Cadastre-se e venha se tornar um Alien</p>
+                <button class="form-button form-button-light" id="open-register">Cadastrar</button>
+            </div>
+        </div>
+    </div>
+</main>
+  
+ 
+
+
+<!-- FOOTER -->
+<!-- <footer class="footer">
+  <img src="src/images/formas de pagamento.jpg" alt="">
+
+  <p> AlienByte® é uma marca registrada de ALIENBYTE S.A | CNPJ: 00.000.000/0000-00 | Todos os direitos reservados. 
+  Os preços anunciados neste site ou via e-mail promocional podem ser alterados sem prévio aviso.
+   A AlienByte não é responsável por erros descritivos. As fotos contidas nesta página são meramente 
+   ilustrativas do produto e podem variar de acordo com o fornecedor/lote do fabricante. 
+   Este site trabalha 100% em criptografia SSL.  <a href="#">Clique aqui e veja as políticas de nossa empresa</a>.</p>
+
+</footer> -->
+
+<!-- JAVASCRIPT PARTE NAVBAR -->
+<script src="script.js"></script>
+</body>
+
+</html>
