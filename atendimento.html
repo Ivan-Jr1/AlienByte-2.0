@@ -4,91 +4,18 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="src/slide.css" />
   <link rel="shortcut icon" href="alienn.ico" type="image/x-icon" />
   <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="src/slide.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AlienByte</title>
 </head>
 
 <body>
 
-  <nav>
-    <div class="navbar">
-      <i class="bx bx-menu"></i>
-
-      <div class="logo">
-        <a href="http://127.0.0.1:5500/Projeto%2023-09/index.html">
-          <img
-            src="https://lh3.googleusercontent.com/pw/AIL4fc-pd74C9bNlOXvwgSWDASf9LBhWJW5Mjumyj6P8-MbzwPpEJB72Bbve59nkedSamgUWFAWhh8ZU3jm-VxtZWrU-M8dzegONuksCMs6YFYqXkEuNq9xMlYWJEgGtMaErAxU77joE_iaQr3GCj-_VOFcQ=w500-h500-s-no?authuser=0" /></a>
-      </div>
-
-      <!-- MENU -->
-      <div class="nav-links">
-        <div class="sidebar-logo">
-          <i class="bx bx-x"></i>
-        </div>
-        <ul class="links">
-          <li><a href="index.html">HOME</a></li>
-          <li>
-            <a href="#">DEPARTAMENTOS</a>
-            <i class="bx bxs-chevron-down htmlcss-arrow arrow"></i>
-            <ul class="htmlCss-sub-menu sub-menu">
-              <li><a href="teclado.html">Teclado</a></li>
-              <li><a href="mouse.html">Mouse</a></li>
-              <li><a href="headset.html">Headset</a></li>
-              <li class="more">
-                <span><a href="#">Mais</a>
-                  <i class="bx bxs-chevron-right arrow more-arrow"></i>
-                </span>
-                <ul class="more-sub-menu sub-menu">
-                  <li><a href="gabinetes.html">Gabinetes</a></li>
-                  <li><a href="games.html">Games</a></li>
-                  <li><a href="cadeiras.html">Cadeiras</a></li>
-                  <li><a href="monitor.html">Monitores</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="promocao.html" target="_self">PROMOÇÕES</a>
-            <ul class="js-sub-menu sub-menu">
-            </ul>
-          </li>
-          <li>
-            <a href="#">OLÁ... Entre!</a>
-            <i class="bx bxs-chevron-down htmlcss-arrow arrow"></i>
-            <ul class="htmlCss-sub-menu sub-menu">
-              <li><a href="conta.html" target="_self"> Conta </a></li>
-              <li><a href="atendimento.html">Atendimento</a></li>
-            </ul>
-      </div>
-
-      <!-- BOTOES DE LOGIN/CADASTRO -->
-      <!-- <div class="btn">
-            <button href="#" class="login">Login</button>
-            <button href="#" class="cadastro">Cadastro</button>
-          </div> -->
-
-      <!-- CARRINHO DE COMPRAS -->
-      <div class="header-icon">
-        <i class="bx bx-cart"></i>
-        <span class="item__total"></span>
-
-        <!-- BARRA DE PESQUISA -->
-        <div class="search-box">
-          <i class="bx bx-search"></i>
-          <div class="input-box">
-            <input type="text" placeholder="Pesquise o seu produto" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
+  <div id="nav-placeholder"></div>
   <br>
   <!-- FORMULARIO -->
   <br>
@@ -107,18 +34,19 @@
         <textarea name="message" placeholder="Digite sua mensagem"></textarea>
 
 
-        <a href="index.html" class="botao">
-
-          <button class="botao">
-            Enviar mensagem
-        </a>
+        <button type="submit" class="botao">
+          Enviar mensagem
         </button>
 
       </form>
     </div>
   </div>
 
+  <div id="footer-placeholder"></div>
 
+  <script src="include.js"></script>
+  <script src="script.js"></script>
+  <script src="cart.js"></script>
 </body>
 
 </html>

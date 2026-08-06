@@ -1,38 +1,35 @@
-// search-box open close js code
-let navbar = document.querySelector(".navbar");
-let searchBox = document.querySelector(".search-box .bx-search");
-// let searchBoxCancel = document.querySelector(".search-box .bx-x");
+// código do nav só pode rodar depois que include.js injeta partials/nav.html no DOM
+function initNavBehavior() {
+  const navbar = document.querySelector(".navbar");
+  const searchToggle = document.querySelector(".search-toggle");
+  const searchInput = document.getElementById("site-search-input");
 
-searchBox.addEventListener("click", () => {
-  navbar.classList.toggle("showInput");
-  if (navbar.classList.contains("showInput")) {
-    searchBox.classList.replace("bx-search", "bx-x");
-  } else {
-    searchBox.classList.replace("bx-x", "bx-search");
-  }
-});
+  searchToggle.addEventListener("click", () => {
+    const isOpen = navbar.classList.toggle("showInput");
+    searchToggle.setAttribute("aria-expanded", String(isOpen));
+    if (isOpen) searchInput.focus();
+  });
 
-// sidebar open close js code
-let navLinks = document.querySelector(".nav-links");
-let menuOpenBtn = document.querySelector(".navbar .bx-menu");
-let menuCloseBtn = document.querySelector(".nav-links .bx-x");
-menuOpenBtn.onclick = function () {
-  navLinks.style.left = "0";
-};
-menuCloseBtn.onclick = function () {
-  navLinks.style.left = "-100%";
-};
+  const navLinks = document.querySelector(".nav-links");
+  const menuOpenBtn = document.querySelector(".menu-toggle");
+  const menuCloseBtn = document.querySelector(".menu-close");
 
-// sidebar submenu open close js code
-let htmlcssArrow = document.querySelector(".htmlcss-arrow");
-htmlcssArrow.onclick = function () {
-  navLinks.classList.toggle("show1");
-};
-let moreArrow = document.querySelector(".more-arrow");
-moreArrow.onclick = function () {
-  navLinks.classList.toggle("show2");
-};
-let jsArrow = document.querySelector(".js-arrow");
-jsArrow.onclick = function () {
-  navLinks.classList.toggle("show3");
-};
+  menuOpenBtn.addEventListener("click", () => {
+    navLinks.classList.add("nav-links--open");
+    menuOpenBtn.setAttribute("aria-expanded", "true");
+  });
+  menuCloseBtn.addEventListener("click", () => {
+    navLinks.classList.remove("nav-links--open");
+    menuOpenBtn.setAttribute("aria-expanded", "false");
+  });
+
+  // seta de submenu (Departamentos, Mais, Conta) — um handler delegado só alterna aria-expanded
+  document.querySelector(".navbar").addEventListener("click", (event) => {
+    const arrowBtn = event.target.closest(".arrow");
+    if (!arrowBtn) return;
+    const expanded = arrowBtn.getAttribute("aria-expanded") === "true";
+    arrowBtn.setAttribute("aria-expanded", String(!expanded));
+  });
+}
+
+document.addEventListener("partialsLoaded", initNavBehavior);
