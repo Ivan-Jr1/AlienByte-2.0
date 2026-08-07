@@ -8,6 +8,9 @@ function renderProductGrid(products, containerId) {
       const [whole, cents] = formatPriceBRL(product.price).split(",");
       return `
     <div class="item" data-id="${product.id}" data-name="${escapeHtml(product.title)}" data-price="${product.price}" data-img="${product.img}">
+      <button type="button" class="wishlist-toggle js-toggle-wishlist" aria-label="Favoritar" aria-pressed="false">
+        <i class="bx bx-heart" aria-hidden="true"></i>
+      </button>
       <div class="item-content">
         <img src="${product.img}" alt="" class="item-img">
         <h1 class="item-title">${escapeHtml(product.title)}</h1>

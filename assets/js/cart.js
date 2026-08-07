@@ -57,7 +57,7 @@ function getCartCount() {
 }
 
 function updateCartBadge() {
-  const badge = document.querySelector(".item__total");
+  const badge = document.querySelector(".cart-count");
   if (badge) badge.textContent = getCartCount();
 }
 
@@ -116,7 +116,9 @@ function initCart() {
 
   document.addEventListener("click", (event) => {
     if (event.target.matches(".js-add-to-cart")) {
-      const card = event.target.closest(".item");
+      event.preventDefault();
+      const card = event.target.closest("[data-id]");
+      if (!card) return;
       addToCart({
         id: card.dataset.id,
         name: card.dataset.name,
