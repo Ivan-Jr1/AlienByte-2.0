@@ -57,7 +57,7 @@ function getCartCount() {
 }
 
 function updateCartBadge() {
-  const badge = document.querySelector(".item__total");
+  const badge = document.querySelector(".cart-count");
   if (badge) badge.textContent = getCartCount();
 }
 
@@ -83,27 +83,43 @@ function renderCartPage() {
       <img src="${escapeHtml(item.img)}" alt="" class="cart-item__img">
       <div class="cart-item__info">
         <p class="cart-item__name">${escapeHtml(item.name)}</p>
-        <p class="cart-item__price">R$${formatPriceBRL(item.price)}</p>
+        <span class="cart-item__freight"><i class="bx bx-package" aria-hidden="true"></i> Frete Grátis</span>
       </div>
-      <div class="cart-item__stepper">
-        <button type="button" class="cart-item__step" data-step="-1" data-id="${item.id}" aria-label="Diminuir quantidade">-</button>
-        <span class="cart-item__qty">${item.qty}</span>
-        <button type="button" class="cart-item__step" data-step="1" data-id="${item.id}" aria-label="Aumentar quantidade">+</button>
+      <div class="cart-item__qty">
+        <span class="cart-item__qty-label">Quantidade</span>
+        <div class="cart-item__stepper">
+          <button type="button" class="cart-item__step" data-step="-1" data-id="${item.id}" aria-label="Diminuir quantidade">-</button>
+          <span class="cart-item__qty-value">${item.qty}</span>
+          <button type="button" class="cart-item__step" data-step="1" data-id="${item.id}" aria-label="Aumentar quantidade">+</button>
+        </div>
       </div>
       <p class="cart-item__subtotal">R$${formatPriceBRL(item.price * item.qty)}</p>
       <button type="button" class="cart-item__remove" data-remove-id="${item.id}" aria-label="Remover ${escapeHtml(item.name)}">
-        <i class="bx bx-trash" aria-hidden="true"></i>
+        <i class="bx bx-x" aria-hidden="true"></i>
       </button>
     </div>`
     )
     .join("");
 
+  const total = getCartTotal();
+
   root.innerHTML = `
-    <div class="cart-page__items">${rows}</div>
+    <div class="cart-page__items">
+      ${rows}
+      <button type="button" id="clear-cart-btn" class="cart-page__clear">
+        <i class="bx bx-trash" aria-hidden="true"></i> Limpar carrinho
+      </button>
+    </div>
     <aside class="cart-page__summary">
-      <h2 class="cart-page__summary-title">Resumo do pedido</h2>
+      <h2 class="cart-page__summary-title"><i class="bx bx-receipt" aria-hidden="true"></i> Resumo do pedido</h2>
+      <div class="cart-page__summary-row">
+        <span>Valor dos Produtos</span><span>R$${formatPriceBRL(total)}</span>
+      </div>
+      <div class="cart-page__summary-row">
+        <span>Frete</span><span class="cart-page__summary-freight">Grátis</span>
+      </div>
       <div class="cart-page__summary-row cart-page__summary-row--total">
-        <span>Total</span><span>R$${formatPriceBRL(getCartTotal())}</span>
+        <span>Total</span><span>R$${formatPriceBRL(total)}</span>
       </div>
       <button type="button" class="cart-page__checkout" disabled title="Em breve">Finalizar compra</button>
       <a href="index.html" class="cart-page__continue">Continuar comprando</a>
@@ -137,6 +153,11 @@ function initCart() {
     const removeBtn = event.target.closest("[data-remove-id]");
     if (removeBtn) {
       removeFromCart(removeBtn.dataset.removeId);
+      return;
+    }
+
+    if (event.target.closest("#clear-cart-btn")) {
+      saveCart([]);
     }
   });
 }
