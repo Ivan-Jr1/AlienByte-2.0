@@ -1317,7 +1317,6 @@
     .item-title {
       font-size: 1rem;
       text-transform: capitalize;
-      transition-delay: .1s;
     }
 
     .item-body,
@@ -1332,7 +1331,6 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      transition-delay: .2s;
     }
 
     .item:hover .item-img,
@@ -1342,7 +1340,15 @@
       transform: translateY(0);
     }
 
-    .item-footer {
+    .item:hover .item-title {
+      transition-delay: .1s;
+    }
+
+    .item:hover .item-body {
+      transition-delay: .2s;
+    }
+
+    .item:hover .item-footer {
       transition-delay: .3s;
     }
 
