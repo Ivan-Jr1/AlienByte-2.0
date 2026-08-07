@@ -74,6 +74,45 @@
     }
   });
 
+  // SWIPE (mobile): arrasta na horizontal para trocar de slide
+  const SWIPE_THRESHOLD = 40;
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchDeltaX = 0;
+  let isSwiping = false;
+
+  slider.addEventListener("touchstart", (event) => {
+    const touch = event.touches[0];
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+    touchDeltaX = 0;
+    isSwiping = false;
+    stopAuto();
+  }, { passive: true });
+
+  slider.addEventListener("touchmove", (event) => {
+    const touch = event.touches[0];
+    touchDeltaX = touch.clientX - touchStartX;
+    const deltaY = touch.clientY - touchStartY;
+
+    if (!isSwiping && Math.abs(touchDeltaX) > Math.abs(deltaY) && Math.abs(touchDeltaX) > 10) {
+      isSwiping = true;
+    }
+
+    // só bloqueia o scroll vertical da página quando o gesto é claramente horizontal
+    if (isSwiping) {
+      event.preventDefault();
+    }
+  }, { passive: false });
+
+  slider.addEventListener("touchend", () => {
+    if (isSwiping && Math.abs(touchDeltaX) > SWIPE_THRESHOLD) {
+      touchDeltaX < 0 ? next() : prev();
+    }
+    isSwiping = false;
+    startAuto();
+  });
+
   goTo(0);
   startAuto();
 })();

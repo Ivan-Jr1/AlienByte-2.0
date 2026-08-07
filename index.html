@@ -80,47 +80,42 @@
   <!-- TITULO SEGUNDA PARTE -->
 
   <h3>DEPARTAMENTOS EM ALTA</h3>
-  <div>
-    <section id="produtos">
-      <section class="produto">
-        <img src="assets/img/promo/dep-auto/--perifericos.png" width="120px">
-      </section>
-
-      <section class="produto">
-        <img src="assets/img/promo/dep-auto/monitor.png" width="120px">
-      </section>
-
-      <section class="produto">
-        <img src="assets/img/promo/dep-auto/kit-upgrade.png" width="120px">
-      </section>
-
-      <section class="produto">
-        <img src="assets/img/promo/dep-auto/pc-gamer.png" width="120px">
-      </section>
-
-      <section class="produto">
-        <img src="assets/img/promo/dep-auto/gabinetes.png" width="120px">
-      </section>
-
-      <section class="produto">
-        <img src="assets/img/promo/dep-auto/cadeira.png" width="120px">
-      </section>
-
-      <section class="produto">
-        <img src="assets/img/promo/dep-auto/Refri.png" width="120px">
-      </section>
+  <section id="produtos">
+    <section class="produto">
+      <img src="assets/img/promo/dep-auto/--perifericos.png" width="120px">
+      <p class="names">Mouse</p>
     </section>
-  </div>
 
-  <div class="container">
-    <p class="names">Mouse</p>
-    <p class="names">Monitor Gamer</p>
-    <p class="names">Kit Upgrade</p>
-    <p class="names">PC Gamer</p>
-    <p class="names">Gabinete</p>
-    <p class="names">Cadeira Gamer</p>
-    <p class="names">Refrigeração</p>
-  </div>
+    <section class="produto">
+      <img src="assets/img/promo/dep-auto/monitor.png" width="120px">
+      <p class="names">Monitor Gamer</p>
+    </section>
+
+    <section class="produto">
+      <img src="assets/img/promo/dep-auto/kit-upgrade.png" width="120px">
+      <p class="names">Kit Upgrade</p>
+    </section>
+
+    <section class="produto">
+      <img src="assets/img/promo/dep-auto/pc-gamer.png" width="120px">
+      <p class="names">PC Gamer</p>
+    </section>
+
+    <section class="produto">
+      <img src="assets/img/promo/dep-auto/gabinetes.png" width="120px">
+      <p class="names">Gabinete</p>
+    </section>
+
+    <section class="produto">
+      <img src="assets/img/promo/dep-auto/cadeira.png" width="120px">
+      <p class="names">Cadeira Gamer</p>
+    </section>
+
+    <section class="produto">
+      <img src="assets/img/promo/dep-auto/Refri.png" width="120px">
+      <p class="names">Refrigeração</p>
+    </section>
+  </section>
   <br>
 
   <!-- BANNER PROMOCIONAL -->
@@ -138,7 +133,10 @@
   <h4>LANÇAMENTOS</h4>
   <br>
   <section class="container">
-    <div class="promo-card promo-card--1">
+    <div class="promo-card promo-card--1" data-id="promo-g435" data-name="Logitech G435 LIGHTSPEED" data-price="186.61" data-img="assets/img/promo/dep-auto/headset_logitch-removebg.png">
+      <button type="button" class="wishlist-toggle js-toggle-wishlist" aria-label="Favoritar" aria-pressed="false">
+        <i class="bx bx-heart" aria-hidden="true"></i>
+      </button>
       <div class="imgBx">
         <img src="assets/img/promo/dep-auto/headset_logitch-removebg.png" alt="">
       </div>
@@ -146,11 +144,14 @@
         <p>Logitech G435 LIGHTSPEED</p>
         <p class="price"><small>R$</small>186,<small>61
           </small></p>
-        <a href="#" class="buy">Comprar</a>
+        <button type="button" class="buy js-add-to-cart">Comprar</button>
       </div>
     </div>
 
-    <div class="promo-card promo-card--2">
+    <div class="promo-card promo-card--2" data-id="promo-yama3" data-name="ThunderX3 Yama3" data-price="1999.90" data-img="assets/img/promo/dep-auto/Yama.PNG">
+      <button type="button" class="wishlist-toggle js-toggle-wishlist" aria-label="Favoritar" aria-pressed="false">
+        <i class="bx bx-heart" aria-hidden="true"></i>
+      </button>
       <div class="imgBx">
         <img src="assets/img/promo/dep-auto/Yama.PNG" alt="">
       </div>
@@ -158,10 +159,13 @@
         <p>ThunderX3 Yama3</p>
         <p class="price"><small>R$</small>1.999,<small>90
           </small></p>
-        <a href="#" class="buy">Comprar</a>
+        <button type="button" class="buy js-add-to-cart">Comprar</button>
       </div>
     </div>
-    <div class="promo-card promo-card--3">
+    <div class="promo-card promo-card--3" data-id="promo-switch-oled" data-name="Nintendo Switch OLED" data-price="2050.00" data-img="assets/img/promo/dep-auto/gm2.PNG">
+      <button type="button" class="wishlist-toggle js-toggle-wishlist" aria-label="Favoritar" aria-pressed="false">
+        <i class="bx bx-heart" aria-hidden="true"></i>
+      </button>
       <div class="imgBx">
         <img src="assets/img/promo/dep-auto/gm2.PNG" alt="">
       </div>
@@ -169,7 +173,7 @@
         <p>Nintendo Switch OLED</p>
         <p class="price"><small>R$</small>2.050,<small>00
           </small></p>
-        <a href="#" class="buy">Comprar</a>
+        <button type="button" class="buy js-add-to-cart">Comprar</button>
       </div>
     </div>
   </section>
@@ -181,6 +185,9 @@
   <h5>HORA<b> DO PLAY</b></h5>
   <div class="slide">
     <div class="item" data-id="home-01" data-name="Water Cooler NZXT Kraken X73" data-price="849.9" data-img="assets/img/promo/hora-do-play/Refrigeracao.png">
+      <button type="button" class="wishlist-toggle js-toggle-wishlist" aria-label="Favoritar" aria-pressed="false">
+        <i class="bx bx-heart" aria-hidden="true"></i>
+      </button>
       <div class="item-content">
         <img src="assets/img/promo/hora-do-play/Refrigeracao.png" alt="" class="item-img">
         <h1 class="item-title">Water Cooler NZXT Kraken X73</h1>
@@ -198,6 +205,9 @@
       </div>
     </div>
     <div class="item" data-id="home-02" data-name="Controle Sem Fio Xbox Carbon Black" data-price="349.9" data-img="assets/img/promo/hora-do-play/controle xbox.png">
+      <button type="button" class="wishlist-toggle js-toggle-wishlist" aria-label="Favoritar" aria-pressed="false">
+        <i class="bx bx-heart" aria-hidden="true"></i>
+      </button>
       <div class="item-content">
         <img src="assets/img/promo/hora-do-play/controle xbox.png" alt="" class="item-img">
         <h1 class="item-title">Controle Sem Fio Xbox Carbon Black</h1>
@@ -215,6 +225,9 @@
       </div>
     </div>
     <div class="item" data-id="home-03" data-name="RTX 4090 Gaming Trio MSI NVIDIA GeForce" data-price="5099.99" data-img="assets/img/promo/hora-do-play/4090 ².png">
+      <button type="button" class="wishlist-toggle js-toggle-wishlist" aria-label="Favoritar" aria-pressed="false">
+        <i class="bx bx-heart" aria-hidden="true"></i>
+      </button>
       <div class="item-content">
         <img src="assets/img/promo/hora-do-play/4090 ².png" alt="" class="item-img">
         <h1 class="item-title">RTX 4090 Gaming Trio MSI NVIDIA GeForce</h1>
@@ -232,6 +245,9 @@
       </div>
     </div>
     <div class="item" data-id="home-04" data-name="Apple iPhone 15 Pro Max" data-price="6569.1" data-img="assets/img/promo/hora-do-play/iphone.png">
+      <button type="button" class="wishlist-toggle js-toggle-wishlist" aria-label="Favoritar" aria-pressed="false">
+        <i class="bx bx-heart" aria-hidden="true"></i>
+      </button>
       <div class="item-content">
         <img src="assets/img/promo/hora-do-play/iphone.png" alt="" class="item-img">
         <h1 class="item-title">Apple iPhone 15 Pro Max</h1>
@@ -249,6 +265,9 @@
       </div>
     </div>
     <div class="item" data-id="home-05" data-name="Controle para PS5 sem Fio DualSense Marvels" data-price="478.0" data-img="assets/img/promo/hora-do-play/controle ps5.png">
+      <button type="button" class="wishlist-toggle js-toggle-wishlist" aria-label="Favoritar" aria-pressed="false">
+        <i class="bx bx-heart" aria-hidden="true"></i>
+      </button>
       <div class="item-content">
         <img src="assets/img/promo/hora-do-play/controle ps5.png" alt="" class="item-img">
         <h1 class="item-title">Controle para PS5 sem Fio DualSense Marvels</h1>
@@ -266,6 +285,9 @@
       </div>
     </div>
     <div class="item" data-id="home-06" data-name="Monitor Gamer LG UltraGear LG 34&quot; Curvo LED WQHD, UltraWide.." data-price="1199.99" data-img="assets/img/promo/hora-do-play/monitor lg.png">
+      <button type="button" class="wishlist-toggle js-toggle-wishlist" aria-label="Favoritar" aria-pressed="false">
+        <i class="bx bx-heart" aria-hidden="true"></i>
+      </button>
       <div class="item-content">
         <img src="assets/img/promo/hora-do-play/monitor lg.png" alt="" class="item-img">
         <h1 class="item-title">Monitor Gamer LG UltraGear LG 34" Curvo LED WQHD, UltraWide..</h1>
@@ -283,6 +305,9 @@
       </div>
     </div>
     <div class="item" data-id="home-07" data-name="Jogo Halo Infinite Edição Com Baralho Exclusivo Xbox Series" data-price="29.9" data-img="assets/img/promo/hora-do-play/halo.png">
+      <button type="button" class="wishlist-toggle js-toggle-wishlist" aria-label="Favoritar" aria-pressed="false">
+        <i class="bx bx-heart" aria-hidden="true"></i>
+      </button>
       <div class="item-content">
         <img src="assets/img/promo/hora-do-play/halo.png" alt="" class="item-img">
         <h1 class="item-title">Jogo Halo Infinite Edição Com Baralho Exclusivo Xbox Series</h1>
@@ -300,6 +325,9 @@
       </div>
     </div>
     <div class="item" data-id="home-08" data-name="Console Sony Playstation 5 + God Of War Ragnarok" data-price="2499.99" data-img="assets/img/promo/hora-do-play/Ps5.jpg">
+      <button type="button" class="wishlist-toggle js-toggle-wishlist" aria-label="Favoritar" aria-pressed="false">
+        <i class="bx bx-heart" aria-hidden="true"></i>
+      </button>
       <div class="item-content">
         <img src="assets/img/promo/hora-do-play/Ps5.jpg" alt="" class="item-img">
         <h1 class="item-title">Console Sony Playstation 5 + God Of War Ragnarok</h1>
@@ -323,13 +351,19 @@
   <br>
 
   <div class="banners_promoc">
-    <div class="banners-promocional">
-      <a class="banners" title="Os melhores preços em Iphones. Confira!"><img
-          alt="Os melhores preços em Iphones. Confira!" src="assets/img/promo/dep-auto/iphone promo.jpg"></a>
+    <div class="promo-banner promo-banner--frete">
+      <i class="bx bxs-rocket promo-banner__icon" aria-hidden="true"></i>
+      <div>
+        <p class="promo-banner__title">Frete Grátis</p>
+        <p class="promo-banner__subtitle">Em compras acima de R$299 para todo o Brasil</p>
+      </div>
     </div>
-    <div class="banners-promocional">
-      <a class="banners" title="Os melhores preços em Iphones. Confira!"><img
-          alt="Os melhores preços em Iphones. Confira!" src="assets/img/promo/dep-auto/iphone promo.jpg"></a>
+    <div class="promo-banner promo-banner--cupom">
+      <i class="bx bx-purchase-tag-alt promo-banner__icon" aria-hidden="true"></i>
+      <div>
+        <p class="promo-banner__title">15% OFF na primeira compra</p>
+        <p class="promo-banner__subtitle">Use o cupom <strong>BEMVINDO15</strong> no carrinho</p>
+      </div>
     </div>
   </div>
 
@@ -343,6 +377,7 @@
   <script src="assets/js/include.js"></script>
   <script src="assets/js/script.js"></script>
   <script src="assets/js/cart.js"></script>
+  <script src="assets/js/wishlist.js"></script>
 </body>
 
 </html>
