@@ -1379,6 +1379,24 @@
       border: .1rem solid var(--secondary);
     }
 
+    /* em telas sem mouse (touch) não existe :hover, então o card fica sempre "revelado" */
+    @media (hover: none), (max-width:768px) {
+      .item::before {
+        transform: scale(1.8);
+      }
+
+      .item::after {
+        transform: scale(0);
+      }
+
+      .item-img,
+      .item-title,
+      .item-body,
+      .item-footer {
+        transform: translateY(0);
+      }
+    }
+
     /* CONTA/CADASTRO */
 
 
