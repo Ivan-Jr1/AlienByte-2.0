@@ -74,12 +74,20 @@ section.slider {
 }
 
 .nav-dots__dot {
+    position: relative;
     width: 10px;
     height: 10px;
     border: 1px solid var(--primary-color);
     border-radius: 50%;
     cursor: pointer;
     transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+/* área de toque maior que o ponto visível, sem alterar o tamanho no layout */
+.nav-dots__dot::before {
+    content: '';
+    position: absolute;
+    inset: -12px;
 }
 
 .nav-dots__dot:hover {
