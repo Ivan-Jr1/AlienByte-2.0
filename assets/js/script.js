@@ -25,3 +25,24 @@ function initNavBehavior() {
 }
 
 document.addEventListener("partialsLoaded", initNavBehavior);
+
+// anima a entrada dos cards (produto e lançamentos) quando eles aparecem na tela
+function initScrollReveal() {
+  const targets = document.querySelectorAll(".item, .promo-card");
+  if (!targets.length || !("IntersectionObserver" in window)) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("reveal-visible");
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.15 });
+
+  targets.forEach((el) => {
+    el.classList.add("reveal-init");
+    observer.observe(el);
+  });
+}
+
+initScrollReveal();

@@ -10,6 +10,28 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
+// reinicia a animação CSS "bump" mesmo se o elemento já estiver animando
+function bump(el) {
+  if (!el) return;
+  el.classList.remove("bump");
+  void el.offsetWidth;
+  el.classList.add("bump");
+}
+
+// troca o texto do botão por uma confirmação rápida e depois volta ao normal
+function confirmButtonFeedback(button) {
+  const originalText = button.textContent;
+  button.textContent = "Adicionado ✓";
+  button.classList.add("is-confirmed");
+  button.disabled = true;
+  bump(button);
+  setTimeout(() => {
+    button.textContent = originalText;
+    button.classList.remove("is-confirmed");
+    button.disabled = false;
+  }, 1200);
+}
+
 function getCart() {
   try {
     const raw = localStorage.getItem(CART_STORAGE_KEY);
@@ -141,6 +163,8 @@ function initCart() {
         price: parseFloat(card.dataset.price),
         img: card.dataset.img,
       });
+      bump(document.querySelector(".cart-link"));
+      confirmButtonFeedback(event.target);
       return;
     }
 

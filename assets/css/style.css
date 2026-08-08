@@ -260,6 +260,19 @@
       text-align: center;
     }
 
+    /* feedback de "adicionado ao carrinho/favoritos": reaplicável via JS removendo e
+       recolocando a classe (bump() em cart.js) */
+    @keyframes bump {
+      0% { transform: scale(1); }
+      40% { transform: scale(1.3); }
+      70% { transform: scale(0.94); }
+      100% { transform: scale(1); }
+    }
+
+    .bump {
+      animation: bump 0.45s ease;
+    }
+
     /* PÁGINA DO CARRINHO */
 
     .cart-page {
@@ -1076,6 +1089,7 @@
       background: #2c2c2c;
       border-radius: 20px;
       overflow: hidden;
+      transition: opacity var(--transition-slow), translate var(--transition-slow), scale var(--transition-fast);
     }
 
     .promo-card:before {
@@ -1328,6 +1342,9 @@
 
     .item-body,
     .item-footer {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-2);
       transform: translateY(8rem);
       transition: .5s ease-in-out;
     }
@@ -1376,6 +1393,14 @@
       border-radius: 2rem;
       color: #fff;
       cursor: pointer;
+      white-space: nowrap;
+      transition: padding var(--transition-fast), font-size var(--transition-fast);
+    }
+
+    .btn1.is-confirmed {
+      padding-left: var(--space-3);
+      padding-right: var(--space-3);
+      font-size: var(--text-xs);
     }
 
     .btn-success {
@@ -1402,6 +1427,23 @@
       .item-footer {
         transform: translateY(0);
       }
+    }
+
+    /* ENTRADA ANIMADA: .item e .promo-card usam "translate"/"scale" (propriedades
+       independentes de "transform") para não brigar com o scale do :hover/:active */
+    .reveal-init {
+      opacity: 0;
+      translate: 0 24px;
+    }
+
+    .reveal-init.reveal-visible {
+      opacity: 1;
+      translate: 0 0;
+    }
+
+    .item:active,
+    .promo-card:active {
+      scale: 0.97;
     }
 
     /* CONTA/CADASTRO */

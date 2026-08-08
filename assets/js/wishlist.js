@@ -24,12 +24,14 @@ function isInWishlist(id) {
 function toggleWishlist({ id, name, price, img }) {
   const items = getWishlist();
   const existingIndex = items.findIndex((item) => item.id === id);
+  const wasAdded = existingIndex < 0;
   if (existingIndex >= 0) {
     items.splice(existingIndex, 1);
   } else {
     items.push({ id, name, price, img });
   }
   saveWishlist(items);
+  if (wasAdded) bump(document.querySelector(".wishlist-link"));
 }
 
 function removeFromWishlist(id) {
@@ -100,6 +102,7 @@ function initWishlist() {
     if (toggleBtn) {
       const card = toggleBtn.closest("[data-id]");
       if (!card) return;
+      bump(toggleBtn);
       toggleWishlist({
         id: card.dataset.id,
         name: card.dataset.name,
