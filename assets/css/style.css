@@ -611,6 +611,12 @@
         grid-template-areas: none;
       }
 
+      .cart-item--wishlist .cart-item__img,
+      .cart-item--wishlist .cart-item__info,
+      .cart-item--wishlist .cart-item__remove {
+        grid-area: auto;
+      }
+
       .cart-page__summary {
         position: static;
       }
