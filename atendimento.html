@@ -6,9 +6,6 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="shortcut icon" href="assets/img/alienn.ico" type="image/x-icon" />
   <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AlienByte</title>
 </head>
@@ -16,29 +13,49 @@
 <body>
 
   <div id="nav-placeholder"></div>
-  <br>
+
   <!-- FORMULARIO -->
-  <br>
   <div class="containeer">
+    <div class="contact-card">
+      <aside class="contact-info">
+        <span class="form-brand">Alien<span class="logo-accent">Byte</span></span>
+        <h2 class="form-title form-title-light">Fale Conosco</h2>
+        <p class="contact-info__text">Dúvidas, sugestões ou problemas com seu pedido? Nosso time está pronto pra ajudar.</p>
+        <ul class="contact-info__list">
+          <li><i class="bx bx-envelope" aria-hidden="true"></i> atendimento@alienbyte.com.br</li>
+          <li><i class="bx bx-time-five" aria-hidden="true"></i> Seg a Sex, 9h às 18h</li>
+          <li><i class="bx bx-headphone" aria-hidden="true"></i> Suporte via chat 24/7</li>
+        </ul>
+        <div class="form-social">
+          <a href="#" class="social-icon" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="social-icon" aria-label="WhatsApp"><i class="bx bxl-whatsapp"></i></a>
+        </div>
+      </aside>
 
-    <div class="form_box">
+      <div class="form_box">
+        <h2 class="title">Envie sua mensagem</h2>
 
-      <h2 class="title">Envie sua mensagem</h2>
+        <form action="" method="get">
+          <div class="form-input-group">
+            <i class="bx bx-user" aria-hidden="true"></i>
+            <input type="text" name="name" class="form-input" placeholder="Seu nome">
+          </div>
+          <div class="form-input-group">
+            <i class="bx bx-envelope" aria-hidden="true"></i>
+            <input type="email" name="email" class="form-input" placeholder="Seu E-mail">
+          </div>
+          <div class="form-input-group form-input-group--full">
+            <i class="bx bx-edit-alt" aria-hidden="true"></i>
+            <input type="text" name="subject" class="form-input" placeholder="Assunto">
+          </div>
 
-      <form action="" method="get">
+          <textarea name="message" class="form-input" placeholder="Digite sua mensagem"></textarea>
 
-        <input type="text" name="name" placeholder="Seu nome">
-        <input type="email" name="email" placeholder="Seu E-mail">
-        <input type="text" name="subject" placeholder="Assunto">
-
-        <textarea name="message" placeholder="Digite sua mensagem"></textarea>
-
-
-        <button type="submit" class="botao">
-          Enviar mensagem
-        </button>
-
-      </form>
+          <button type="submit" class="botao">
+            Enviar mensagem <i class="bx bx-send" aria-hidden="true"></i>
+          </button>
+        </form>
+      </div>
     </div>
   </div>
 
