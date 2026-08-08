@@ -29,6 +29,15 @@ section.slider {
 
 .slide-box img {
     width: 100%;
+    object-fit: cover;
+}
+
+.img-desktop {
+    aspect-ratio: 3 / 1;
+}
+
+.img-mobile {
+    aspect-ratio: 1040 / 600;
 }
 
 .slider-arrow {

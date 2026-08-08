@@ -12,7 +12,7 @@ function renderProductGrid(products, containerId) {
         <i class="bx bx-heart" aria-hidden="true"></i>
       </button>
       <div class="item-content">
-        <img src="${product.img}" alt="" class="item-img">
+        <img src="${product.img}" alt="" class="item-img" loading="lazy">
         <h1 class="item-title">${escapeHtml(product.title)}</h1>
         <div class="item-body">
           <div class="item-star">
