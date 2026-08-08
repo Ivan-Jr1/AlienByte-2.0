@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="shortcut icon" href="assets/img/alienn.ico" type="image/x-icon">
   <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="assets/js/login.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AlienByte</title>
@@ -23,38 +22,55 @@
                 <a href="#" id="open-register-mobile" class="mobile-tab">Cadastro</a>
             </div>
             <form class="form form-login">
-                <h2 class="form-title">LOGIN<p><small>sou cliente</small></p></h2>
+                <span class="form-brand">Alien<span class="logo-accent">Byte</span></span>
+                <h2 class="form-title">Login<span class="form-title__sub">Bem-vindo de volta, gamer</span></h2>
                 <div class="form-social">
-                    <a href="https://www.facebook.com/?locale=pt_BR" class="social-icon">
-                        <i class="fab fa-facebook-f"></i>
+                    <a href="https://www.facebook.com/?locale=pt_BR" class="social-icon" aria-label="Entrar com Facebook">
+                        <i class="bx bxl-facebook-circle"></i>
                     </a>
-                    <a href="https://accounts.google.com/AccountChooser/signinchooser?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&flowName=GlifWebSignIn&flowEntry=AccountChooser&theme=glif" class="social-icon">
-                        <i class="fab fa-google"></i>
+                    <a href="https://accounts.google.com/AccountChooser/signinchooser?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&flowName=GlifWebSignIn&flowEntry=AccountChooser&theme=glif" class="social-icon" aria-label="Entrar com Google">
+                        <i class="bx bxl-google"></i>
                     </a>
                 </div>
                 <p class="form-text">ou utilize sua conta</p>
                 <div class="form-input-container">
-                    <input type="email" class="form-input" placeholder="Email">
-                    <input type="password" class="form-input" placeholder="Senha">
+                    <div class="form-input-group">
+                        <i class="bx bx-envelope" aria-hidden="true"></i>
+                        <input type="email" class="form-input" placeholder="Email">
+                    </div>
+                    <div class="form-input-group">
+                        <i class="bx bx-lock-alt" aria-hidden="true"></i>
+                        <input type="password" class="form-input" placeholder="Senha">
+                    </div>
                 </div>
                 <a href="esquece.html" class="form-link">Esqueceu a senha?</a>
-                <button type="button" class="form-button">ENTRAR</button>
+                <button type="button" class="form-button">Entrar</button>
             </form>
             <form class="form form-register">
-                <h2 class="form-title">Criar Conta</h2>
+                <span class="form-brand">Alien<span class="logo-accent">Byte</span></span>
+                <h2 class="form-title">Criar Conta<span class="form-title__sub">Junte-se à comunidade Alien</span></h2>
                 <div class="form-social">
-                  <a href="https://www.facebook.com/?locale=pt_BR" class="social-icon">
-                    <i class="fab fa-facebook-f"></i>
+                  <a href="https://www.facebook.com/?locale=pt_BR" class="social-icon" aria-label="Cadastrar com Facebook">
+                    <i class="bx bxl-facebook-circle"></i>
                 </a>
-                <a href="https://accounts.google.com/AccountChooser/signinchooser?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&flowName=GlifWebSignIn&flowEntry=AccountChooser&theme=glif" class="social-icon">
-                    <i class="fab fa-google"></i>
+                <a href="https://accounts.google.com/AccountChooser/signinchooser?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&flowName=GlifWebSignIn&flowEntry=AccountChooser&theme=glif" class="social-icon" aria-label="Cadastrar com Google">
+                    <i class="bx bxl-google"></i>
                 </a>
                 </div>
                 <p class="form-text">ou cadastre seu email</p>
                 <div class="form-input-container">
-                    <input type="text" class="form-input" placeholder="Nome">
-                    <input type="email" class="form-input" placeholder="Email">
-                    <input type="password" class="form-input" placeholder="Senha">
+                    <div class="form-input-group">
+                        <i class="bx bx-user" aria-hidden="true"></i>
+                        <input type="text" class="form-input" placeholder="Nome">
+                    </div>
+                    <div class="form-input-group">
+                        <i class="bx bx-envelope" aria-hidden="true"></i>
+                        <input type="email" class="form-input" placeholder="Email">
+                    </div>
+                    <div class="form-input-group">
+                        <i class="bx bx-lock-alt" aria-hidden="true"></i>
+                        <input type="password" class="form-input" placeholder="Senha">
+                    </div>
                 </div>
                 <button type="button" class="form-button">Cadastrar</button>
             </form>
