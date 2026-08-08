@@ -809,6 +809,7 @@
     }
 
     .links li {
+      position: relative;
       opacity: 0;
       transform: translateX(-16px);
       transition: opacity var(--transition-base), transform var(--transition-base);
@@ -839,10 +840,10 @@
       font-size: var(--text-sm);
       font-weight: 500;
       overflow: hidden;
-      transition: color var(--transition-fast), background var(--transition-fast), padding-left var(--transition-fast);
+      transition: color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
     }
 
-    .links li a::before {
+    .links li::before {
       content: "";
       position: absolute;
       top: 0;
@@ -866,11 +867,11 @@
     .links li a:focus-visible {
       color: var(--secondary);
       background: rgba(0, 221, 83, 0.08);
-      padding-left: calc(var(--space-4) + var(--space-2));
+      transform: translateX(8px);
     }
 
-    .links li a:hover::before,
-    .links li a:focus-visible::before {
+    .links li:hover::before,
+    .links li:has(a:focus-visible)::before {
       transform: scaleY(1);
       transform-origin: top;
     }
