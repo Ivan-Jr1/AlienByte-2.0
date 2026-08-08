@@ -1220,6 +1220,58 @@
       margin: auto;
     }
 
+    .highlight-section {
+      max-width: 1250px;
+      margin: var(--space-6) auto;
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5) var(--space-4);
+    }
+
+    .highlight-section__header {
+      text-align: center;
+      margin-bottom: var(--space-4);
+    }
+
+    .highlight-section__title {
+      display: inline-block;
+      position: relative;
+      color: var(--text-color-light);
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding-bottom: var(--space-2);
+      margin: 0;
+    }
+
+    .highlight-section__title span {
+      color: var(--secondary);
+    }
+
+    .highlight-section__title::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 48px;
+      height: 3px;
+      border-radius: var(--radius-pill);
+      background: var(--secondary);
+      transform: translateX(-50%);
+    }
+
+    .highlight-section__subtitle {
+      color: var(--text-muted-2);
+      font-size: var(--text-sm);
+      margin-top: var(--space-2);
+    }
+
+    .highlight-section .slide {
+      background: none;
+      padding: 0;
+    }
+
     .slide {
       background-color: var(--bg);
       padding: 1rem;
