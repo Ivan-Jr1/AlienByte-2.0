@@ -1427,6 +1427,20 @@
       .item-footer {
         transform: translateY(0);
       }
+
+      .promo-card::before {
+        transform: skewY(390deg);
+        top: -70%;
+      }
+
+      .promo-card .imgBx img {
+        max-width: 70%;
+      }
+
+      .promo-card .contentBx .buy {
+        top: 0;
+        opacity: 1;
+      }
     }
 
     /* ENTRADA ANIMADA: .item e .promo-card usam "translate"/"scale" (propriedades
