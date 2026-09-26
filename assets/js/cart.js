@@ -83,6 +83,20 @@ function updateCartBadge() {
   if (badge) badge.textContent = getCartCount();
 }
 
+// linhas de valores do resumo, compartilhadas entre carrinho.html e checkout.html
+function orderTotalsHtml(total) {
+  return `
+      <div class="cart-page__summary-row">
+        <span>Valor dos Produtos</span><span>R$${formatPriceBRL(total)}</span>
+      </div>
+      <div class="cart-page__summary-row">
+        <span>Frete</span><span class="cart-page__summary-freight">Grátis</span>
+      </div>
+      <div class="cart-page__summary-row cart-page__summary-row--total">
+        <span>Total</span><span>R$${formatPriceBRL(total)}</span>
+      </div>`;
+}
+
 function renderCartPage() {
   const root = document.getElementById("cart-page-root");
   if (!root) return;
@@ -134,16 +148,8 @@ function renderCartPage() {
     </div>
     <aside class="cart-page__summary">
       <h2 class="cart-page__summary-title"><i class="bx bx-receipt" aria-hidden="true"></i> Resumo do pedido</h2>
-      <div class="cart-page__summary-row">
-        <span>Valor dos Produtos</span><span>R$${formatPriceBRL(total)}</span>
-      </div>
-      <div class="cart-page__summary-row">
-        <span>Frete</span><span class="cart-page__summary-freight">Grátis</span>
-      </div>
-      <div class="cart-page__summary-row cart-page__summary-row--total">
-        <span>Total</span><span>R$${formatPriceBRL(total)}</span>
-      </div>
-      <button type="button" class="cart-page__checkout" disabled title="Em breve">Finalizar compra</button>
+      ${orderTotalsHtml(total)}
+      <a href="checkout.html" class="cart-page__checkout">Finalizar compra</a>
       <a href="index.html" class="cart-page__continue">Continuar comprando</a>
     </aside>`;
 }

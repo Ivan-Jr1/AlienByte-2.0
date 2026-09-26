@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="shortcut icon" href="assets/img/alienn.ico" type="image/x-icon">
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlienByte | Finalizar Compra</title>
+</head>
+
+<body>
+  <div id="nav-placeholder"></div>
+
+  <main class="cart-page">
+    <ol class="checkout-steps">
+      <li class="checkout-steps__step is-done">
+        <span class="checkout-steps__icon"><i class="bx bx-cart" aria-hidden="true"></i></span>
+        <span class="checkout-steps__label">Carrinho</span>
+      </li>
+      <li class="checkout-steps__step is-active" data-step="identificacao">
+        <span class="checkout-steps__icon"><i class="bx bx-user" aria-hidden="true"></i></span>
+        <span class="checkout-steps__label">Identificação</span>
+      </li>
+      <li class="checkout-steps__step" data-step="pagamento">
+        <span class="checkout-steps__icon"><i class="bx bx-dollar" aria-hidden="true"></i></span>
+        <span class="checkout-steps__label">Pagamento</span>
+      </li>
+      <li class="checkout-steps__step" data-step="confirmacao">
+        <span class="checkout-steps__icon"><i class="bx bx-check" aria-hidden="true"></i></span>
+        <span class="checkout-steps__label">Confirmação</span>
+      </li>
+    </ol>
+
+    <h1 class="cart-page__title">Finalizar compra</h1>
+
+    <div id="checkout-root" class="cart-page__layout">
+      <div>
+        <form id="identification-form" class="checkout-card" data-checkout-panel="identificacao">
+          <h2 class="checkout-card__title"><i class="bx bx-user" aria-hidden="true"></i> Seus dados</h2>
+          <div class="checkout-grid">
+            <label class="checkout-field checkout-field--full">Nome completo
+              <input type="text" name="fullName" autocomplete="name" required />
+            </label>
+            <label class="checkout-field">E-mail
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+            <label class="checkout-field">CPF
+              <input type="text" name="cpf" inputmode="numeric" placeholder="000.000.000-00"
+                data-mask="###.###.###-##" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required />
+            </label>
+            <label class="checkout-field">Celular
+              <input type="tel" name="phone" autocomplete="tel" placeholder="(00) 00000-0000"
+                data-mask="(##) #####-####" pattern="\(\d{2}\) \d{5}-\d{4}" required />
+            </label>
+          </div>
+
+          <h2 class="checkout-card__title"><i class="bx bx-map" aria-hidden="true"></i> Endereço de entrega</h2>
+          <div class="checkout-grid">
+            <label class="checkout-field">CEP
+              <input type="text" name="cep" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000"
+                data-mask="#####-###" pattern="\d{5}-\d{3}" required />
+            </label>
+            <label class="checkout-field">Rua
+              <input type="text" name="street" autocomplete="address-line1" required />
+            </label>
+            <label class="checkout-field">Número
+              <input type="text" name="number" required />
+            </label>
+            <label class="checkout-field">Complemento
+              <input type="text" name="complement" autocomplete="address-line2" placeholder="Opcional" />
+            </label>
+            <label class="checkout-field">Bairro
+              <input type="text" name="district" required />
+            </label>
+            <label class="checkout-field">Cidade
+              <input type="text" name="city" autocomplete="address-level2" required />
+            </label>
+            <label class="checkout-field">Estado (UF)
+              <input type="text" name="state" autocomplete="address-level1" maxlength="2" pattern="[A-Za-z]{2}" required />
+            </label>
+          </div>
+
+          <button type="submit" class="cart-page__checkout">Continuar para pagamento</button>
+        </form>
+
+        <form id="payment-form" class="checkout-card" data-checkout-panel="pagamento" hidden>
+          <h2 class="checkout-card__title"><i class="bx bx-wallet" aria-hidden="true"></i> Forma de pagamento</h2>
+          <div class="payment-options">
+            <label class="payment-option">
+              <input type="radio" name="method" value="pix" checked />
+              <i class="bx bx-qr" aria-hidden="true"></i>
+              <span>PIX<small>Aprovação imediata</small></span>
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="method" value="cartao" />
+              <i class="bx bx-credit-card" aria-hidden="true"></i>
+              <span>Cartão de crédito<small>Em até 10x sem juros</small></span>
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="method" value="boleto" />
+              <i class="bx bx-barcode" aria-hidden="true"></i>
+              <span>Boleto bancário<small>Vence em 3 dias úteis</small></span>
+            </label>
+          </div>
+
+          <!-- desabilitado enquanto oculto para o navegador não validar campos de cartão no PIX/boleto -->
+          <fieldset id="card-fields" class="checkout-grid" disabled hidden>
+            <label class="checkout-field checkout-field--full">Número do cartão
+              <input type="text" name="cardNumber" inputmode="numeric" autocomplete="cc-number" placeholder="0000 0000 0000 0000"
+                data-mask="#### #### #### ####" pattern="(\d{4} ){3}\d{4}" required />
+            </label>
+            <label class="checkout-field checkout-field--full">Nome impresso no cartão
+              <input type="text" name="cardName" autocomplete="cc-name" required />
+            </label>
+            <label class="checkout-field">Validade
+              <input type="text" name="cardExpiry" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/AA"
+                data-mask="##/##" pattern="(0[1-9]|1[0-2])/\d{2}" required />
+            </label>
+            <label class="checkout-field">CVV
+              <input type="text" name="cardCvv" inputmode="numeric" autocomplete="cc-csc" placeholder="000"
+                data-mask="####" pattern="\d{3,4}" required />
+            </label>
+            <label class="checkout-field checkout-field--full">Parcelas
+              <select name="installments" id="installments-select"></select>
+            </label>
+          </fieldset>
+
+          <div class="checkout-actions">
+            <button type="button" class="checkout-back" data-go-to="identificacao">Voltar</button>
+            <button type="submit" class="cart-page__checkout">Confirmar pedido</button>
+          </div>
+        </form>
+
+        <section class="checkout-card checkout-confirmation" data-checkout-panel="confirmacao" hidden>
+          <i class="bx bx-check-circle checkout-confirmation__icon" aria-hidden="true"></i>
+          <h2 class="checkout-confirmation__title">Pedido confirmado!</h2>
+          <p>Número do pedido: <strong id="order-number"></strong></p>
+          <p id="order-payment-message"></p>
+          <p id="order-address-message"></p>
+          <a href="index.html" class="cart-empty__cta">Continuar comprando</a>
+        </section>
+      </div>
+
+      <aside id="checkout-summary" class="cart-page__summary"></aside>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/wishlist.js"></script>
+  <script src="assets/js/checkout.js"></script>
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
