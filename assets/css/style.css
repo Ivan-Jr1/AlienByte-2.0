@@ -1324,7 +1324,8 @@
       transition: 0.5s;
     }
 
-    .promo-card:hover::before {
+    .promo-card:hover::before,
+    .promo-card:focus-within::before {
       transform: skewY(390deg);
       top: -70%;
     }
@@ -1365,7 +1366,8 @@
       transition: 0.5s;
     }
 
-    .promo-card:hover .imgBx img {
+    .promo-card:hover .imgBx img,
+    .promo-card:focus-within .imgBx img {
       max-width: 70%;
     }
 
@@ -1412,7 +1414,8 @@
       transition: 0.5s;
     }
 
-    .promo-card:hover .contentBx .buy {
+    .promo-card:hover .contentBx .buy,
+    .promo-card:focus-within .contentBx .buy {
       top: 0px;
       opacity: 1;
     }
@@ -1518,7 +1521,8 @@
       z-index: 1;
     }
 
-    .item:hover {
+    .item:hover,
+    .item:focus-within {
       border: .1rem solid var(--secondary);
       transform: scale(1.05);
     }
@@ -1575,11 +1579,13 @@
       height: 5rem;
     }
 
-    .item:hover::before {
+    .item:hover::before,
+    .item:focus-within::before {
       transform: scale(1.8);
     }
 
-    .item:hover::after {
+    .item:hover::after,
+    .item:focus-within::after {
       transform: scale(0);
     }
 
@@ -1631,21 +1637,28 @@
     }
 
     .item:hover .item-img,
+    .item:focus-within .item-img,
     .item:hover .item-title,
+    .item:focus-within .item-title,
     .item:hover .item-body,
-    .item:hover .item-footer {
+    .item:focus-within .item-body,
+    .item:hover .item-footer,
+    .item:focus-within .item-footer {
       transform: translateY(0);
     }
 
-    .item:hover .item-title {
+    .item:hover .item-title,
+    .item:focus-within .item-title {
       transition-delay: .1s;
     }
 
-    .item:hover .item-body {
+    .item:hover .item-body,
+    .item:focus-within .item-body {
       transition-delay: .2s;
     }
 
-    .item:hover .item-footer {
+    .item:hover .item-footer,
+    .item:focus-within .item-footer {
       transition-delay: .3s;
     }
 
@@ -1682,6 +1695,13 @@
 
     .btn-border {
       border: .1rem solid var(--secondary);
+    }
+
+    /* .btn1 zera o outline padrão, então o foco do teclado precisa de um contorno próprio */
+    .btn1:focus-visible,
+    .promo-card .contentBx .buy:focus-visible {
+      outline: 2px solid var(--accent-bright);
+      outline-offset: 2px;
     }
 
     /* em telas sem mouse (touch) não existe :hover, então o card fica sempre "revelado" */
@@ -2437,5 +2457,30 @@
 
       .payment-list {
         justify-content: center;
+      }
+    }
+
+    /* respeita "reduzir movimento" do sistema: sem animações de entrada, zoom ou transições longas */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      .reveal-init {
+        opacity: 1;
+        translate: none;
+      }
+
+      .item:hover,
+      .item:focus-within,
+      .item:active,
+      .promo-card:active {
+        transform: none;
+        scale: none;
       }
     }

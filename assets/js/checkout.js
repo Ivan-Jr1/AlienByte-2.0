@@ -28,7 +28,8 @@ function showCheckoutStep(step) {
     stepItem.classList.toggle("is-active", index === currentIndex);
     stepItem.classList.toggle("is-done", index < currentIndex);
   });
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
 }
 
 function renderCheckoutSummary(items) {
