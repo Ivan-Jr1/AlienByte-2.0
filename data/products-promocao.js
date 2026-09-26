@@ -5,7 +5,6 @@ const productsPromocao = [
   { id: "promocao-04", img: "assets/img/promo/hora-do-play/hyperx.png", title: "Headset Sem Fio Gamer HyperX Cloud Stinger Core Som Surround 7.1", rating: 4.7, price: 389.99 },
   { id: "promocao-05", img: "assets/img/promo/hora-do-play/mymax cadeira.png", title: "Cadeira Gamer Mymax MX5, Até 150kg, Com Almofadas. . .", rating: 4.5, price: 479.99 },
   { id: "promocao-06", img: "assets/img/promo/hora-do-play/fonte.png", title: "Fonte MSI MAG A650BN, ATX, 650W, 80 PLUS Bronze", rating: 4.4, price: 219.99 },
-  { id: "promocao-07", img: "assets/img/promo/hora-do-play/rise gabinete.png", title: "Nike Running Shoese", rating: 4.5, price: 449.99 },
   { id: "promocao-08", img: "assets/img/promo/hora-do-play/mousee.png", title: "Mouse Gamer Logitech G403 HERO com RGB LIGHTSYNC", rating: 4.4, price: 199.99 },
   { id: "promocao-09", img: "assets/img/promo/hora-do-play/memoria.png", title: "Memória Kingston Fury Impact, 8GB, 3200MHz, DDR4", rating: 4.4, price: 156.99 },
   { id: "promocao-10", img: "assets/img/promo/hora-do-play/water corsair.png", title: "Water Cooler Corsair H55, RGB, 120mm, Radiator", rating: 4.4, price: 338.99 },

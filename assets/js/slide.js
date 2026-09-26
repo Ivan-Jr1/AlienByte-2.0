@@ -5,6 +5,8 @@
   if (!slider || !track || !radios.length) return;
 
   const AUTO_MS = 5000;
+  // quem pediu "reduzir movimento" no sistema troca de slide só pelas setas, pontos ou swipe
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   let timer;
 
   function currentIndex() {
@@ -30,6 +32,7 @@
 
   function startAuto() {
     stopAuto();
+    if (prefersReducedMotion) return;
     timer = setInterval(next, AUTO_MS);
   }
 
