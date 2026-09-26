@@ -857,6 +857,11 @@
       text-decoration: none;
       color: var(--text-color-light);
       font-size: var(--text-sm);
+    /* remove o "x" nativo do input type=search, que colidiria com o botão de busca */
+    .search-box input::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+    }
+
       font-weight: 500;
       overflow: hidden;
       transition: color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);

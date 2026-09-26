@@ -9,12 +9,12 @@
           </div>
 
           <!-- BARRA DE PESQUISA -->
-          <div class="search-box">
-            <input type="text" id="site-search-input" placeholder="Encontre na AlienByte" />
-            <button type="button" class="search-submit" aria-label="Buscar">
+          <form class="search-box" action="pesquisa.html" method="get" role="search">
+            <input type="search" id="site-search-input" name="q" placeholder="Encontre na AlienByte" aria-label="Pesquisar produtos" required />
+            <button type="submit" class="search-submit" aria-label="Buscar">
               <i class="bx bx-search" aria-hidden="true"></i>
             </button>
-          </div>
+          </form>
 
           <div class="header-icon">
             <a href="conta.html" class="account-link">
